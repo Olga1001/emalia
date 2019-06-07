@@ -1,0 +1,964 @@
+@import "fonts"
+@import "vars"
+
+*
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+  line-height: 1
+
+  &:before, &:after
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+
+*::-webkit-input-placeholder
+  color: #003153
+  font-family: "LucidaGrandeBold", sans-serif
+  font-size: 18px
+  font-weight: 700
+
+*:-moz-placeholder
+  color: #003153
+  font-family: "LucidaGrandeBold", sans-serif
+  font-size: 18px
+  font-weight: 700
+  line-height: 45px
+
+*::-moz-placeholder
+  color: #003153
+  font-family: "LucidaGrandeBold", sans-serif
+  font-size: 18px
+  font-weight: 700
+  line-height: 45px
+
+*:-ms-input-placeholder
+  color: #003153
+  font-family: "LucidaGrandeBold", sans-serif
+  font-size: 18px
+  font-weight: 700
+  line-height: 45px
+
+input[type=text]::-ms-clear
+  display: none
+  width: 0
+  height: 0
+
+input[type=text]::-ms-reveal
+  display: none
+  width: 0
+  height: 0
+
+::-webkit-scrollbar
+  width: 10px
+  height: 3px
+
+::-webkit-scrollbar-thumb
+  background: #ccc
+
+input::-webkit-search-decoration, input::-webkit-search-cancel-button, input::-webkit-search-results-button, input::-webkit-search-results-decoration
+  display: none
+  -webkit-appearance: none
+
+input::-webkit-search-decoration, input::-webkit-search-cancel-button, input::-webkit-search-results-button, input::-webkit-search-results-decoration
+  display: none
+  -webkit-appearance: none
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+  color: #d4dae1
+
+body input:required:valid,
+body textarea:required:valid
+  font-family: "opensanshebrew-regular", sans-serif
+  text-transform: capitalize
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video
+  margin: 0
+  padding: 0
+  border: 0
+  font-size: 100%
+  font: inherit
+  vertical-align: baseline
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section
+  display: block
+
+ol, ul
+  list-style: none
+a
+  text-decoration: none
+  line-height: 1
+body
+  width: 100%
+input, textarea
+  border: 2px solid #003153
+  background: none
+  width: 100%
+  border-radius: 8px
+  color: #003153
+  font-family: "LucidaGrandeBold", sans-serif
+  outline: none
+  font-size: 18px
+  font-weight: 700
+  text-transform: capitalize
+textarea
+  height: 205px
+  resize: none
+  padding: 12px 13px
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none
+  margin: 0 /* <-- Apparently some margin are still there even though it's hidden */
+input[type=number]
+  -moz-appearance: textfield /* Firefox */
+.container
+  max-width: 1630px
+  width: 100%
+  margin: 0 auto
+  padding: 0 15px
+.btn
+  border-radius: 8px
+  background: #003153
+  color: #f1c933
+  font-family: "LucidaGrandeBold", sans-serif
+  font-weight: 700
+  border: none
+  outline: none
+.header
+  background: url("../img/bg1.png") no-repeat center 99%
+  background-size: cover
+  width: 100%
+  height: 140px
+  padding: 0 10px
+  display: flex
+  align-items: center
+  position: relative
+  justify-content: center
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5), inset 0 1px 3px rgba(0, 0, 0, 0.5)
+  &-menu
+    display: flex
+    margin-right: 30px
+  &-link
+    color: #003153
+    font-family: "LucidaGrandeBold", sans-serif
+    font-size: 30px
+    font-weight: 700
+    text-decoration: none
+    line-height: 1
+    margin: 0 11px
+  &-btn
+    color: #f1c933
+    font-family: "LucidaGrandeBold", sans-serif
+    font-size: 20px
+    padding: 13px 48px 11px
+    right: 110px
+    top: 50%
+    transform: translateY(-50%)
+    position: absolute
+  &-btn-menu
+    cursor: pointer
+    width: 34px
+    height: 34px
+    margin-left: 20px
+    position: relative
+    -webkit-transition: background-color .5s ease
+    transition: background-color .5s ease
+    display: none
+
+  &-btn-menu.btn-active
+    z-index: 2
+    border-radius: 50px
+
+  &-btn-menu.bg-active
+    border-radius: 50px
+    z-index: 3
+
+.header-btn-menu.btn-active .header-line, .header-btn-menu.bg-active .header-line
+  background: #003153
+
+.header-btn-menu.btn-active .header-line_center, .header-btn-menu.bg-active .header-line_center
+  opacity: 0
+
+.header-btn-menu.btn-active .header-line_top, .header-btn-menu.bg-active .header-line_top
+  -webkit-transform: translateY(7px) rotate(225deg)
+  transform: translateY(7px) rotate(225deg)
+
+.header-btn-menu.btn-active .header-line_bottom, .header-btn-menu.bg-active .header-line_bottom
+  -webkit-transform: translateY(-7px) rotate(-225deg)
+  transform: translateY(-7px) rotate(-225deg)
+
+.header-line
+  width: 20px
+  height: 2px
+  display: block
+  background: #003153
+  position: absolute
+  left: calc(50% - 10px)
+  -webkit-transition: all .5s ease
+  transition: all .5s ease
+
+.header-line.header-line_top
+  top: 10px
+
+.header-line.header-line_center
+  top: 50%
+
+.header-line.header-line_bottom
+  bottom: 8px
+
+
+.home
+  &-title
+    color: #003153
+    font-family: "LucidaGrandeBold", sans-serif
+    font-size: 89px
+    font-weight: 700
+    position: relative
+    text-align: center
+    display: table
+    margin: 0 auto 45px
+    line-height: 145px
+    width: 100%
+    &:before
+      content: ''
+      position: absolute
+      bottom: 0
+      left: 50%
+      transform: translateX(-50%)
+      max-width: 480px
+      width: 100%
+      height: 12px
+      border-radius: 8px
+      background: linear-gradient(to left, #dbb560, #f6f2bf, #dbb560)
+  &-text
+    color: #003153
+    font-family: "LucidaGrandeBold", sans-serif
+    font-size: 30px
+    font-weight: 700
+    max-width: 1175px
+    text-align: center
+    margin: 0 auto 10px
+  &-slider
+    &-item
+      width: 100%
+      max-height: 999px
+      position: relative
+    &-img
+      width: 100%
+      height: calc(100vh - 140px)
+      object-fit: cover
+      min-height: 385px
+      max-height: 999px
+    &-btn
+      position: absolute
+      left: 50%
+      bottom: 20%
+      transform: translateX(-50%)
+      font-size: 36px
+      width: 390px
+      text-align: center
+      padding: 27px 0 24px
+  &-search
+    width: 100%
+    background: url("../img/bg1.png") no-repeat center
+    padding: 115px 10px 170px
+    &-crumbs
+      width: 100%
+      height: auto
+      display: flex
+      flex-wrap: wrap
+      align-items: center
+      border-radius: 8px
+      background: #b5bbbf
+      padding-left: 25px
+    &-text
+      color: #003153
+      font-family: "LucidaGrandeBold", sans-serif
+      font-size: 24px
+      font-weight: 700
+      line-height: 1
+      width: 152px
+      margin-right: 20px
+      text-align: center
+      &:first-child
+        margin-right: 0
+        //text-align: left
+    &-link
+      position: relative
+      display: inline-block
+      line-height: 44px
+      padding: 0 50px 0 25px
+      width: auto
+      outline: none
+      &:before
+        content: ''
+        position: absolute
+        right: 0
+        top: 0
+        background: url("../img/arrow-crumb.png") no-repeat
+        background-size: 29px 45px
+        width: 29px
+        height: 45px
+    &-date
+      border-radius: 8px
+      background: #b5bbbf
+      width: 100%
+      padding: 12px 17px
+      margin: 10px 0 20px
+    &-input
+      max-width: 173px
+      height: 44px
+      border-radius: 7px
+      border: none
+      background: #ffffff
+      padding-left: 60px
+      color: #003153
+      font-family: "LucidaGrandeBold", sans-serif
+      font-size: 16px
+      font-weight: 700
+      line-height: 1
+    &-change
+      position: relative
+      height: 44px
+      display: inline-block
+      margin-right: 84px
+      &:last-child
+        margin-right: 0
+      &:before
+        content: ''
+        position: absolute
+        left: 0
+        top: 0
+        border-radius: 7px
+        background: #d8d8d8 url("../img/date.png") no-repeat center
+        background-size: 28px 26px
+        width: 51px
+        height: 44px
+    &-tab
+      display: flex
+      padding: 0 0 5px
+      align-items: center
+    &-item
+      padding: 14px 25px 10px
+      border-radius: 8px
+      background-color: #b5bbbf
+      display: flex
+      align-items: center
+      max-width: 770px
+      width: 100%
+    &-quantity
+      color: #003153
+      font-family: "LucidaGrandeBold", sans-serif
+      font-size: 24px
+      font-weight: 700
+      line-height: 23px
+      width: 112px
+      height: 44px
+      border-radius: 7px
+      background-color: #ffffff
+      border: none
+      margin-right: 20px
+      text-align: center
+      padding: 0 10px
+
+    &-img
+      margin-right: 13px
+      width: 26px
+      height: 26px
+    &-label
+      display: flex
+      align-items: center
+      width: 170px
+      &:first-child
+        width: auto
+  &-apartments
+    padding: 10px 10px 114px
+    background: url("../img/bg1.png") no-repeat center
+    background-size: cover
+
+    &-flex
+      display: flex
+      flex-wrap: wrap
+      padding: 0 56px 40px
+    &-item
+      width: calc(50% - 112px)
+      margin: 80px 56px 0
+      max-height: 28.6vw
+      position: relative
+      transition: all 0.3s ease
+      overflow: hidden
+      border-radius: 8px
+      &:hover
+        .apartments-hover
+          opacity: 1
+          transform: translateY(0)
+          pointer-events: auto
+        .apartments-down
+          opacity: 0
+          transition: all 0.3s ease
+    &-img
+      width: 100%
+      height: 100%
+      object-fit: cover
+  &-icons
+    max-width: 1645px
+    margin: 100px auto 0
+    width: 100%
+    padding: 16px 95px
+    border-width: 3px
+    border-style: solid
+    border-image: linear-gradient(to left, #dbb560, #f6f2bf, #dbb560) 100% 1
+    &-flex
+      width: 100%
+      display: flex
+      justify-content: space-between
+      flex-wrap: wrap
+    &-img
+      width: 100px
+      height: 100px
+      object-fit: cover
+  &-newsletter
+    background: url("../img/subscribe.png") no-repeat center
+    width: 100%
+    max-height: 495px
+    padding: 105px 10px
+    background-size: cover
+    display: inline-table
+    &-form
+      border-radius: 8px
+      max-width: 775px
+      height: 45px
+      display: flex
+      position: relative
+      margin: 50px auto 0
+    &-btn
+      position: absolute
+      right: 0
+      top: 0
+      height: 100%
+      width: 198px
+      border: none
+      cursor: pointer
+    &-input
+      padding: 0 210px 0 10px
+.form-slider
+  position: absolute
+  top: 0
+  left: 0
+  display: flex
+  justify-content: center
+  align-items: center
+  background: rgba(#000000, 0.6)
+  width: 100%
+  height: 100%
+  opacity: 0
+  pointer-events: none
+  transition: all 0.3s ease
+  padding: 0 10px
+  &.active
+    opacity: 1
+    pointer-events: auto
+.apartments
+  &-down
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+    border-radius: 0 0 8px 8px
+    border: 1px solid #979797
+    background: rgba(#000000, 0.6)
+    padding: 2vw 2.1vw
+    color: #ffffff
+    font-family: "LucidaGrandeBold", sans-serif
+    font-weight: 700
+    line-height: 1
+    transition: all 0.3s ease
+    &-title
+      font-size: 40px
+      line-height: 33px
+    &-flex
+      display: flex
+    &-info
+      font-size: 20px
+      margin-right: 6px
+  &-hover
+    border-radius: 0 0 8px 8px
+    border: 1px solid #979797
+    background: rgba(#000000, 0.6)
+    height: 100%
+    transform: translateY(100px)
+    opacity: 0
+    pointer-events: none
+    width: 100%
+    position: absolute
+    left: 0
+    cursor: pointer
+    bottom: 0
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: start
+    padding: 3.4vw 0 20px
+    transition: all 0.3s ease
+    &-title
+      color: #ffffff
+      font-family: "LucidaGrandeBold", sans-serif
+      text-align: center
+      font-size: 3.1vw
+      font-weight: 700
+    &-btn
+      padding: 15px 58px 13px
+      margin-top: 4.2vw
+.search
+  &-rooms
+    width: 85px
+    background: none
+    text-align: center
+    margin-right: 27px
+.gallery
+  padding: 85px 10px 55px
+  background: url("../img/bg1.png") no-repeat center
+  background-size: cover
+  &-main
+    max-width: 1760px
+    margin: 0 auto
+  &-flex
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    padding: 38px 0 90px
+    &:last-child
+      padding: 0 0 90px
+  &-item
+    width: calc(33.33% - 20px)
+    border-radius: 8px
+    max-width: 530px
+    height: 100%
+    margin: 100px 10px 0
+    &:nth-child(3+3n)
+      margin-right: 0
+    &-title
+      color: #003153
+      font-family: "LucidaGrandeBold", sans-serif
+      font-size: 24px
+      font-weight: 700
+      text-align: center
+      position: relative
+      margin-bottom: 18px
+      display: block
+      &:before
+        content: ''
+        position: absolute
+        bottom: 0
+        left: 50%
+        transform: translateX(-50%)
+        width: 70%
+        height: 4px
+        border-radius: 8px
+        background: linear-gradient(to left, #dbb560, #f6f2bf, #dbb560) 100%
+  &-img
+    width: 100%
+    height: 19.1vw
+    object-fit: cover
+    border-radius: 8px
+.blog
+  padding: 55px 10px 140px
+  background: url("../img/bg1.png") no-repeat center
+  background-size: cover
+  &-main
+    max-width: 1757px
+    margin: 0 auto
+
+  &-flex
+    display: flex
+    margin-top: 185px
+    flex-wrap: wrap
+  &-item
+    width: calc(33.33% - 75px)
+    margin-right: 75px
+    color: #003153
+    font-family: "LucidaGrandeBold", sans-serif
+    font-weight: 700
+    font-size: 20px
+    margin-bottom: 30px
+    position: relative
+    &:nth-child(3n+3)
+      margin-right: 0
+  &-img
+    width: 100%
+    height: 19.1vw
+    object-fit: cover
+    border-radius: 8px
+    margin-bottom: 15px
+  &-name
+    font-size: 24px
+  &-text
+    margin: 20px 0 70px
+    padding-right: 10px
+  &-btn
+    padding: 13px 44px
+    display: inline-block
+    position: absolute
+    bottom: 0
+    left: 0
+.contacts
+  padding: 65px 0 0
+  background: url("../img/bg1.png") no-repeat center
+  background-size: cover
+  &-main
+    padding: 0 10px 30px
+  &-flex
+    display: flex
+    justify-content: space-between
+    max-width: 1550px
+    width: 100%
+    margin: 95px auto 0
+  &-form
+    max-width: 923px
+    width: 100%
+  &-input
+    padding: 0 13px 0
+    line-height: 41px
+    &-email
+      margin-right: 29px
+  &-field
+    display: flex
+    margin-bottom: 35px
+  &-btn
+    margin: 55px auto 0
+    display: block
+    padding: 15px 77px 13px
+    font-size: 16px
+  &-list
+    display: flex
+    align-items: start
+    margin-bottom: 40px
+    padding-left: 10px
+  &-img
+    margin-right: 18px
+  &-text, &-phone
+    color: #003153
+    font-family: "LucidaGrandeBold", sans-serif
+    font-size: 30px
+    font-weight: 700
+    line-height: 31px
+    max-width: 490px
+  &-phone
+    margin-left: 40px
+.about
+  background: url("../img/bg1.png") no-repeat center
+  background-size: cover
+  &-offer
+    width: 100%
+    height: 570px
+    background: url("../img/about1.png") no-repeat center 100%
+    background-size: cover
+    margin-bottom: 25px
+    position: relative
+  &-us
+    padding: 0 10px
+    &-flex
+      display: flex
+      justify-content: space-between
+      max-width: 1715px
+      width: 100%
+      margin: 85px auto 150px
+    &-text
+      color: #003153
+      font-family: "LucidaGrandeBold", sans-serif
+      font-size: 30px
+      font-weight: 700
+      max-width: 887px
+      margin: 0 10px 35px 0
+      display: inline-block
+    &-right
+      max-width: 791px
+      width: 100%
+      height: 547px
+      border-radius: 0 0 8px 8px
+      border: 1px solid #979797
+      background: url("../img/about2.png") no-repeat center
+      background-size: cover
+      position: relative
+    &-title
+      color: #ffffff
+      font-family: "LucidaGrandeBold", sans-serif
+      font-size: 75px
+      font-weight: 700
+    &-btn
+      padding: 13px 48px 11px
+      font-size: 20px
+      margin-top: 75px
+  &-experience
+    padding: 0 10px 195px
+    &-icons
+      display: flex
+      justify-content: space-between
+      flex-wrap: wrap
+      max-width: 1570px
+      width: 100%
+      margin: 50px auto 0
+    &-img
+      margin: 0 auto
+      display: block
+      &-block
+        margin: 47px auto
+        height: 120px
+        display: flex
+        align-items: flex-end
+    &-text
+      color: #003153
+      font-family: "LucidaGrandeBold", sans-serif
+      font-size: 30px
+      font-weight: 700
+      max-width: 360px
+      width: 100%
+      text-align: center
+      margin: 0 auto
+    &-item
+      width: calc(25% - 35px)
+      margin-right: 35px
+      &:last-child
+        margin-right: 0
+
+.deals
+  background: url("../img/bg1.png") no-repeat center
+  background-size: cover
+  &-slider
+    height: 585px
+    width: 100%
+    position: relative
+    &-img
+      height: 585px
+      width: 100%
+      object-fit: cover
+  &-name
+    padding: 100px 10px 140px 83px
+  &-title
+    color: #003153
+    font-family: "LucidaGrandeBold", sans-serif
+    font-size: 40px
+    font-weight: 700
+    display: inline-block
+    position: relative
+    line-height: 1.8
+    margin-bottom: 22px
+    &:before
+      content: ''
+      position: absolute
+      left: 0
+      bottom: 0
+      height: 2px
+      width: 100%
+      background: linear-gradient(to left, #dbb560, #f6f2bf, #dbb560) 100%
+  &-flex, &-info
+    display: flex
+    align-items: center
+    color: #003153
+    font-family: "LucidaGrandeBold", sans-serif
+    font-size: 20px
+    font-weight: 700
+    flex-wrap: wrap
+  &-info
+    padding-right: 33px
+    margin-bottom: 30px
+  &-guests-span, &-rooms-span, &-badrooms-span
+    font-size: 22px
+    margin: 0 10px
+  &-text
+    max-width: 1172px
+    color: #003153
+    font-family: "LucidaGrandeBold", sans-serif
+    font-size: 30px
+    font-weight: 700
+    margin-bottom: 60px
+  &-should
+    &-you
+      color: #003153
+      font-family: "LucidaGrandeBold", sans-serif
+      font-size: 40px
+      font-weight: 700
+      padding: 0 0 50px
+  &-should-know, &-check_in
+    margin-right: 65px
+    white-space: nowrap
+  &-btns
+    display: flex
+    flex-wrap: wrap
+    font-size: 20px
+  .bg-overlay
+    background-image: linear-gradient(180deg, rgba(81, 82, 82, 0.1) 0%, rgba(22, 24, 25, 0.1) 100%)
+.terms
+  background: url("../img/bg1.png") no-repeat center
+  background-size: cover
+  &-title
+    margin-bottom: 40px
+  &-condition
+    padding: 135px 10px 180px 83px
+  .bg-overlay
+    background-image: linear-gradient(180deg, rgba(81, 82, 82, 0.1) 0%, rgba(22, 24, 25, 0.1) 100%)
+
+.blog .home-title, .contacts .home-title, .gallery .home-title
+    margin: 0 auto 65px
+.btn-appartment
+  padding: 13px 30px 12px
+  margin-right: 60px
+  margin-top: 15px
+.btn-gallery
+  padding: 13px 62px 12px
+  margin-top: 15px
+.nowrap
+  white-space: nowrap
+.bg-overlay
+  background-image: linear-gradient(180deg, rgba(81, 82, 82, 0.45) 0%, rgba(22, 24, 25, 0.45) 100%)
+  border: 1px solid #979797
+  height: 100%
+  width: 100%
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  position: absolute
+  left: 0
+  top: 0
+.form-btn
+  margin-top: 47px
+  font-size: 20px
+  border: none
+  padding: 13px 65px 11px
+.slick-arrow
+  z-index: 2
+.slick-prev
+  left: 75px
+.slick-next
+  right: 75px
+.slick-next:before, .slick-prev:before
+  content: ''
+  position: absolute
+  background-size: 38px 66px
+  width: 38px
+  height: 66px
+.slick-prev:before
+  left: 0
+  top: 0
+  background: url("../img/arrow-left.svg") no-repeat
+.slick-next:before
+  right: 0
+  top: 0
+  background: url("../img/arrow-right.svg") no-repeat
+.form
+  max-width: 936px
+  width: 100%
+  margin: 0 auto
+  height: 330px
+.footer
+  &-top
+    padding: 25px 10px 47px
+    background: url("../img/footer.png") no-repeat center
+    background-size: cover
+  &-menu
+    width: 35%
+    &:first-child
+      width: 30%
+  &-flex
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    max-width: 950px
+    margin: 0 auto
+  &-title
+    color: #ffffff
+    font-family: "LucidaGrandeBold", sans-serif
+    font-size: 20px
+    font-weight: 700
+    line-height: 50px
+    position: relative
+    margin-bottom: 18px
+    &:before
+      content: ''
+      position: absolute
+      left: 0
+      bottom: 0
+      height: 2px
+      width: 245px
+      background: linear-gradient(to left, #dbb560, #f6f2bf, #dbb560) 100%
+    &-first:first-child:before
+      width: 170px
+  &-list
+    margin-bottom: 10px
+    display: flex
+    align-items: start
+    &-rooms
+      margin-bottom: 0
+      &-last
+        margin-bottom: 10px
+  &-link
+    color: #ffffff
+    font-family: "LucidaGrandeBold", sans-serif
+    font-size: 20px
+    font-weight: 700
+    line-height: 1
+  &-rooms
+    color: #d8d8d8
+    font-family: "LucidaGrandeBold", sans-serif
+    font-size: 16px
+    font-weight: 700
+    line-height: 23px
+    text-decoration: underline
+    display: block
+  &-img
+    margin-right: 14px
+    width: 21px
+  &-text
+    color: #ffffff
+    font-family: "LucidaGrandeBold", sans-serif
+    font-size: 20px
+    font-weight: 700
+    line-height: 23px
+    max-width: 330px
+  &-list-item
+    margin-bottom: 30px
+  &-phone
+    color: #ffffff
+    font-family: "LucidaGrandeBold", sans-serif
+    font-size: 20px
+    font-weight: 700
+    line-height: 23px
+    margin-left: 34px
+  &-down
+    color: #2a4560
+    font-family: "LucidaGrandeBold", sans-serif
+    font-size: 12px
+    font-weight: 700
+    background: #f7f7f7
+    width: 100%
+    padding: 25px 0 21px
+    text-align: center
+    &-img
+      height: 20px
+      margin: 0 3px 0 0px
+.popup-form
+  position: fixed
+  left: 0
+  top: 0
+  z-index: 9
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 100%
+  height: 100vh
+  background: rgba(#000000, 0.6)
+  opacity: 0
+  pointer-events: none
+  padding: 0 10px
+  cursor: pointer
+  &.active
+    opacity: 1
+    pointer-events: auto
+.map
+  height: 665px
+@import "media"
+
